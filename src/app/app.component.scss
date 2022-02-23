@@ -1,12 +1,3 @@
-:host {
-    font-family: "Helvetica";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 .toolbar {
     padding: 8px;
     top: 0;
@@ -15,8 +6,8 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #ffcc01;
-    color: black;
+    background-color: #01c8ff;
+    color: rgb(0, 0, 0);
     font-weight: 600;
 }
 
