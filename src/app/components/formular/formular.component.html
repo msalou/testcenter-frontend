@@ -1,1 +1,59 @@
-<p>Bitte geben Sie Ihre Daten ein:</p>
+<p>Herzlich Willkommen im Testzentrum! Über das Formular können Sie sich einfach für eine Testung registrieren. Bitte geben Sie Ihre Daten ein:</p>
+
+<form>
+  <mat-form-field class="input-full-width" appearance="fill" hideRequiredMarker>
+    <mat-label>Nachname</mat-label>
+    <input matInput required name="nachname" [(ngModel)]="kunde.nachname"/>
+  </mat-form-field>
+</form>
+
+<form>
+  <mat-form-field class="input-full-width" appearance="fill" hideRequiredMarker>
+    <mat-label>Vorname</mat-label>
+    <input matInput required name="vorname" [(ngModel)]="kunde.vorname"/>
+  </mat-form-field>
+</form>
+
+<form>
+  <mat-form-field class="input-full-width" appearance="fill" hideRequiredMarker>
+    <mat-label>Straße</mat-label>
+    <input matInput required name="strasse" [(ngModel)]="kunde.strasse"/>
+  </mat-form-field>
+</form>
+
+<form>
+  <mat-form-field class="input-full-width" appearance="fill" hideRequiredMarker>
+    <mat-label>Postleitzahl</mat-label>
+    <input matInput required name="plz" [(ngModel)]="kunde.plz"/>
+  </mat-form-field>
+</form>
+
+<form>
+  <mat-form-field class="input-full-width" appearance="fill" hideRequiredMarker>
+    <mat-label>Wohnort</mat-label>
+    <input matInput required name="ort" [(ngModel)]="kunde.ort"/>
+  </mat-form-field>
+</form>
+
+<form>
+  <mat-form-field class="input-full-width" appearance="fill" hideRequiredMarker>
+    <mat-label>Geburtsdatum</mat-label>
+    <input matInput required name="geburtsdatum" [(ngModel)]="kunde.geburtsdatum" placeholder="Format: TT.MM.JJJ"/>
+  </mat-form-field>
+</form>
+
+<form>
+  <mat-form-field class="input-full-width" appearance="fill" hideRequiredMarker>
+    <mat-label>E-Mail</mat-label>
+    <input matInput required name="email" [(ngModel)]="kunde.email"/>
+  </mat-form-field>
+</form>
+
+<form>
+  <mat-form-field class="input-full-width" appearance="fill" hideRequiredMarker>
+    <mat-label>Telefon</mat-label>
+    <input matInput required name="telefon" [(ngModel)]="kunde.telefon"/>
+  </mat-form-field>
+</form>
+
+<button mat-raised-button>Abschicken</button>
