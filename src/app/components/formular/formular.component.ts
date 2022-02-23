@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Kunde } from 'src/app/models/kunde';
+import { Message } from 'src/app/models/message';
 import { KundeService } from 'src/app/services/kunde.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { KundeService } from 'src/app/services/kunde.service';
 export class FormularComponent implements OnInit {
 
   kunde = {} as Kunde;
+  message = {} as Message;
   showError = false;
 
   constructor(private kundeService: KundeService) {}
@@ -20,7 +22,8 @@ export class FormularComponent implements OnInit {
   onClick(): void {
     if (this.isFormularFilled(this.kunde)) {
       this.showError = false;
-      this.kundeService.createKunde(this.kunde);
+      this.kundeService.createKunde(this.kunde)
+        .subscribe(message => this.message = message);
     } else {
       this.showError = true;
     }

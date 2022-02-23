@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, throwError } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Kunde } from '../models/kunde';
 
@@ -11,7 +11,7 @@ export class KundeService {
 
   constructor(private httpClient: HttpClient) {}
 
-  createKunde(kunde: Kunde) {
+  createKunde(kunde: Kunde): Observable<any> {
     return this.httpClient.post(environment.apiUrl + '/createKunde', kunde)
       .pipe(catchError(error => this.handleError(error)));
   }
