@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Kunde } from 'src/app/models/kunde';
+import { KundeService } from 'src/app/services/kunde.service';
 
 @Component({
   selector: 'app-formular',
@@ -11,7 +12,7 @@ export class FormularComponent implements OnInit {
   kunde = {} as Kunde;
   showError = false;
 
-  constructor() {}
+  constructor(private kundeService: KundeService) {}
 
   ngOnInit(): void {
   }
@@ -19,7 +20,7 @@ export class FormularComponent implements OnInit {
   onClick(): void {
     if (this.isFormularFilled(this.kunde)) {
       this.showError = false;
-      console.log(this.kunde);
+      this.kundeService.createKunde(this.kunde);
     } else {
       this.showError = true;
     }
