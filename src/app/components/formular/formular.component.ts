@@ -13,6 +13,7 @@ export class FormularComponent implements OnInit {
   kunde = {} as Kunde;
   message = {} as Message;
   showError = false;
+  checkboxChecked = false;
 
   constructor(private kundeService: KundeService) {}
 
@@ -30,6 +31,8 @@ export class FormularComponent implements OnInit {
   }
 
   isFormularFilled(kunde: Kunde): boolean {
-    return Object.keys(kunde).length == 8 && Object.values(kunde).every(property => (property !== null && property !== ''));
+    return Object.keys(kunde).length == 8 && 
+      Object.values(kunde).every(property => (property !== null && property !== '')) &&
+      this.checkboxChecked;
   }
 }

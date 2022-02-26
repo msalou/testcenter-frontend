@@ -1,12 +1,14 @@
 <div class="toolbar" role="banner">
-  <img width="100" alt="Corona Virus Logo" src="../assets/testcenter_logo.jpg" />
+  <a routerLink="/" routerLinkActive="active"><img width="150" alt="Corona Virus Logo" src="../assets/testcenter_logo.jpg"/></a>
   <h1>Testzentrum</h1>
 </div>
 
-<router-outlet></router-outlet>
+<div class="router">
+  <router-outlet></router-outlet>
+</div>
 
 <mat-divider></mat-divider>
 
 <div>
-  <p class="footer">2022©HEALTHY-Teststation</p>
+  <p class="footer">2022©HEALTHY-Teststation | <a routerLink="/datenschutz" routerLinkActive="active">Datenschutzbedingungen</a> | <a routerLink="/impressum" routerLinkActive="active">Impressum</a></p>
 </div>

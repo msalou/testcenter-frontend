@@ -1,4 +1,4 @@
-<h3>Herzlich Willkommen im Testzentrum! Über das Formular können Sie sich einfach und unkompliziert für eine Testung anmelden. Bitte geben Sie Ihre Daten ein:</h3>
+<h3>Herzlich Willkommen im HEALTHY-Testzentrum! Über das Formular können Sie sich einfach und unkompliziert für eine Testung anmelden. Bitte geben Sie Ihre Daten ein:</h3>
 
 <form>
   <mat-form-field class="input-full-width" appearance="fill" hideRequiredMarker>
@@ -42,8 +42,89 @@
   </mat-form-field>
 </form>
 
+<div>
+  <mat-checkbox class="checkbox" required [(ngModel)]="checkboxChecked">
+    Ich bin mit den <a routerLink="/datenschutz" routerLinkActive="active">Datenschutzbedingungen</a> einverstanden.
+  </mat-checkbox>
+</div>
+
 <div *ngIf="showError">
-  <p class="error">Bitte füllen Sie alle Felder aus.</p>
+  <p class="error">Bitte füllen Sie alle Felder aus und akzeptieren Sie die Datenschutzbedingungen.</p>
 </div>
 
 <button class="btn" mat-raised-button (click)="onClick()">Abschicken</button>
+
+<div class="divider">
+  <mat-divider></mat-divider>
+</div>
+
+<div>
+  <b>Adresse</b><br>
+  Eschholzstraße 19<br>
+  79106 Freiburg<br>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d166.85617012754463!2d7.837647264468869!3d48.00020927640911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47911ba94c757e17%3A0xb6ededa8657153cc!2sHEALTHY-Teststation!5e0!3m2!1sde!2sde!4v1645902681394!5m2!1sde!2sde" style="border:0;" allowfullscreen="" loading="lazy"></iframe><br>
+  <b>Öffnungszeiten</b><br>
+  Mo bis Fr von 8 bis 20 Uhr<br>
+  Sa und So von 10 bis 20 Uhr<br>
+  <img alt="Healthy Plakat Freiburg" src="../assets/healthy_plakat_freiburg.jpg"/>
+</div>
+
+<div class="divider">
+  <mat-divider></mat-divider>
+</div>
+
+<div>
+  <b>Adresse</b><br>
+  Friedhofweg 3<br>
+  79249 Merzhausen<br>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d667.8741730799057!2d7.826142829240789!3d47.96545599870062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479105b74c9f1111%3A0x4e86c63e32e7b895!2sHEALTHY-Teststation!5e0!3m2!1sde!2sde!4v1645902868814!5m2!1sde!2sde" style="border:0;" allowfullscreen="" loading="lazy"></iframe><br>
+  <b>Öffnungszeiten</b><br>
+  Mo bis Fr von 8 bis 20 Uhr<br>
+  Sa und So von 10 bis 20 Uhr<br>
+  <img alt="Healthy Plakat Merzhause" src="../assets/healthy_plakat_merzhausen.jpg"/>
+</div>
+
+<div class="divider">
+  <mat-divider></mat-divider>
+</div>
+
+<div>
+  <h2><b>Gut zu wissen</b></h2>
+  <h3><b>Schnelltestfunktion</b></h3>
+  <p>
+    Der Corona-Antigen-Schnelltest weist aus einer Abstrichprobe die im Rachen
+    oder Nase gesammelt wird, bestimmte Proteine des Erregers Sars-CoV-2 bei der
+    Testperson nach.
+  </p>
+  <h3><b>Schnelltestsicherheit</b></h3>
+  <p>
+    Unser Corona-Antigen-Schnelltest ist vom Bundesinstitut für Arzneimittel und
+    Medizinprodukte (BfArM) zugelassen. Dieser verfügt über eine 97,7 %ige
+    Sensitivität und eine 99,8 %ige Spezifität. Der Test erfüllt damit die
+    gesetzlichen Anforderungen und kann SARS-CoV-2 mit einer sehr hohen
+    Wahrscheinlichkeit nachweisen bzw. ausschließen. Eine zurückliegende
+    Coronavirus-Infektion kann mit einem Corona-Antigen-Schnelltest leider nicht
+    nachgewiesen werden.
+  </p>
+  <h3><b>Abstrichnahme</b></h3>
+  <p>
+    Es wird ein nasopharyngealer (Nase) Abstrich gemacht. Unser Personal wurde
+    für diese Abstrichentnahme-Techniken geschult.
+  </p>
+  <h3><b>Testlänge</b></h3>
+  <p>
+    Der eigentliche Corona-Antigen-Schnelltest dauert nur ca. 3 Minuten und
+    liefert bereits nach 15 bis 30 Minuten ein Ergebnis. Es wird dafür kein
+    Labor zur Auswertung benötigt.
+  </p>
+  <h3><b>Schnelltestergebnisse</b></h3>
+  <p>
+    Der SARS-CoV-2 Antigen-Schnelltest ist kein PCR-Test auf den Coronavirus,
+    wie er bei internationalen Reisen benötigt wird. In einigen Bundesländern
+    wird ein negativer Antigentest als Reiseattest allerdings anerkannt. Bitte
+    prüfen Sie selber aber regelmäßig die sich laufend ändernden Bedingungen und
+    Auflagen.<br />
+    Weitere Informationen finden Sie auf der Homepage des
+    <a href="https://www.rki.de/DE/Home/homepage_node.html">Robert Koch Instituts</a>.
+  </p>
+</div>

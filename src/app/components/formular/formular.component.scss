@@ -1,16 +1,3 @@
-:host {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 10px 10px 10px 10px;
-}
-
-.input-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
-
 .input-full-width {
   width: 100%;
 }
@@ -22,4 +9,23 @@ p.error {
 .btn {
   background-color: #01c8ff;
   cursor: pointer;
+}
+
+.checkbox {
+  margin: 0px 12px 12px 12px;
+}
+
+.divider {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+iframe {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+img {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

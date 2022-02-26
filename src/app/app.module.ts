@@ -16,6 +16,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from './components/modal/modal.component';
 import { MatSelectModule } from '@angular/material/select';
+import { DatenschutzComponent } from './components/datenschutz/datenschutz.component';
+import { ImpressumComponent } from './components/impressum/impressum.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { MatSelectModule } from '@angular/material/select';
     FormularComponent,
     KundenComponent,
     ModalComponent,
+    DatenschutzComponent,
+    ImpressumComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatTableModule,
     MatCheckboxModule,
     MatDialogModule,
-    MatSelectModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],
