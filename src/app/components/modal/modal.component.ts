@@ -27,7 +27,7 @@ export class ModalComponent implements OnInit {
     this.testung.testername = 'CLUNGENE COVID-19';
     const date = new Date();
     this.testung.datum = formatDate(date, 'dd.MM.yyyy', 'en');
-    this.testung.uhrzeit = date.getHours() + ':' + date.getMinutes();
+    this.testung.uhrzeit = date.getHours().toString().padStart(2 ,"0") + ':' + date.getMinutes().toString().padStart(2 ,"0");
   }
   
   onClickPrint(): void {
