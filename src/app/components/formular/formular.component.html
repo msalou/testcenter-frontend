@@ -1,4 +1,4 @@
-<p>Herzlich Willkommen im Testzentrum! Über das Formular können Sie sich einfach und unkompliziert für eine Testung anmelden. Bitte geben Sie Ihre Daten ein:</p>
+<h3>Herzlich Willkommen im Testzentrum! Über das Formular können Sie sich einfach und unkompliziert für eine Testung anmelden. Bitte geben Sie Ihre Daten ein:</h3>
 
 <form>
   <mat-form-field class="input-full-width" appearance="fill" hideRequiredMarker>
@@ -43,7 +43,7 @@
 </form>
 
 <div *ngIf="showError">
-  <p>Bitte füllen Sie alle Felder aus.</p>
+  <p class="error">Bitte füllen Sie alle Felder aus.</p>
 </div>
 
-<button mat-raised-button (click)="onClick()">Abschicken</button>
+<button class="btn" mat-raised-button (click)="onClick()">Abschicken</button>

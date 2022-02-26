@@ -1,0 +1,53 @@
+<div class="buttons">
+    <button class="btn" mat-raised-button (click)="onClickRefresh()">Aktualisieren</button>
+    <button class="btn" mat-raised-button (click)="onClickMail()">Zertifikat als E-Mail verschicken</button>
+    <button class="btn" mat-raised-button (click)="onClickPrint()">Zertifikat drucken</button>
+    <button class="btn" mat-raised-button (click)="onClickDelete()">Kunde löschen</button>
+</div>
+
+<table mat-table [dataSource]="kunden" class="mat-elevation-z8">
+    <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let kunde">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(kunde) : null"
+                        [checked]="selection.isSelected(kunde)">
+          </mat-checkbox>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="nachname">
+        <th mat-header-cell *matHeaderCellDef> Nachname </th>
+        <td mat-cell *matCellDef="let kunde"> {{kunde.nachname}} </td>
+    </ng-container>
+    <ng-container matColumnDef="vorname">
+        <th mat-header-cell *matHeaderCellDef> Vorname </th>
+        <td mat-cell *matCellDef="let kunde"> {{kunde.vorname}} </td>
+    </ng-container>
+    <ng-container matColumnDef="strasse">
+        <th mat-header-cell *matHeaderCellDef> Straße </th>
+        <td mat-cell *matCellDef="let kunde"> {{kunde.strasse}} </td>
+    </ng-container>
+    <ng-container matColumnDef="plz">
+        <th mat-header-cell *matHeaderCellDef> PLZ </th>
+        <td mat-cell *matCellDef="let kunde"> {{kunde.plz}} </td>
+    </ng-container>
+    <ng-container matColumnDef="ort">
+        <th mat-header-cell *matHeaderCellDef> Wohnort </th>
+        <td mat-cell *matCellDef="let kunde"> {{kunde.ort}} </td>
+    </ng-container>
+    <ng-container matColumnDef="geburtsdatum">
+        <th mat-header-cell *matHeaderCellDef> Geburtsdatum </th>
+        <td mat-cell *matCellDef="let kunde"> {{kunde.geburtsdatum}} </td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let kunde"> {{kunde.email}} </td>
+    </ng-container>
+    <ng-container matColumnDef="telefon">
+        <th mat-header-cell *matHeaderCellDef> Telefon </th>
+        <td mat-cell *matCellDef="let kunde"> {{kunde.telefon}} </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

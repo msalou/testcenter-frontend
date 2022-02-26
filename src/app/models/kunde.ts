@@ -1,4 +1,5 @@
 export interface Kunde {
+  id: number;
   nachname: string;
   vorname: string;
   strasse: string;
