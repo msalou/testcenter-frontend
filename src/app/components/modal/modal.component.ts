@@ -38,4 +38,12 @@ export class ModalComponent implements OnInit {
     });
   }
 
+  onClickSendMail(): void {
+    const zertifikat = {
+      kunde: this.selectedKunde,
+      testung: this.testung
+    } as Zertifikat;
+    this.kundeService.sendZertifikat(zertifikat).subscribe();
+  }
+
 }

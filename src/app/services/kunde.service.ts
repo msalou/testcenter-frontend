@@ -32,6 +32,11 @@ export class KundeService {
       .pipe(catchError(error => this.handleError(error)));
   }
 
+  sendZertifikat(zertifikat: Zertifikat): Observable<any> {
+    return this.httpClient.post(environment.apiUrl + '/sendZertifikat', zertifikat)
+      .pipe(catchError(error => this.handleError(error)));
+  }
+
   private handleError(_error: HttpErrorResponse) {
     return throwError(() => new Error('Ein Fehler ist aufgetreten. Bitte melden Sie sich beim Testzentrum.'));
   }

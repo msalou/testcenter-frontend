@@ -25,12 +25,6 @@ export class KundenComponent implements OnInit {
     this.getKunden();
   }
 
-  onClickMail(): void {
-    for (let selectedKunde of this.selection.selected) {
-      
-    }
-  }
-
   onClickPrint(): void {
     for (let selectedKunde of this.selection.selected) {
       this.dialog.open(ModalComponent, {
