@@ -1,9 +1,10 @@
 import { SelectionModel } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Kunde } from 'src/app/models/kunde';
 import { Testung } from 'src/app/models/testung';
-import { Zertifikat } from 'src/app/models/zertifikat';
 import { KundeService } from 'src/app/services/kunde.service';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-kunden',
@@ -18,7 +19,7 @@ export class KundenComponent implements OnInit {
   selectedKunde = {} as Kunde;
   testung = {} as Testung;
 
-  constructor(private kundeService: KundeService) { }
+  constructor(private kundeService: KundeService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getKunden();
@@ -32,11 +33,9 @@ export class KundenComponent implements OnInit {
 
   onClickPrint(): void {
     for (let selectedKunde of this.selection.selected) {
-      const zertifikat = {
-        kunde: this.selectedKunde,
-        testung: this.testung
-      } as Zertifikat;
-      this.kundeService.printZertifikat(zertifikat).subscribe();
+      this.dialog.open(ModalComponent, {
+        data: { kunde: selectedKunde }
+      });
     }
   }
 

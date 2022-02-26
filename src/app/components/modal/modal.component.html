@@ -1,0 +1,35 @@
+<form>
+    <mat-form-field appearance="fill">
+        <mat-label>Testergebnis</mat-label>
+        <mat-select [(value)]="testung.ergebnis">
+          <mat-option value="negativ">negativ</mat-option>
+          <mat-option value="positiv">positiv</mat-option>
+          <mat-option value="ungültig">ungültig</mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>
+
+<form>
+    <mat-form-field appearance="fill">
+        <mat-label>Testername</mat-label>
+        <mat-select [(value)]="testung.testername">
+          <mat-option value="CLUNGENE COVID-19">CLUNGENE COVID-19</mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>
+
+<form>
+    <mat-form-field class="input-full-width" appearance="fill" hideRequiredMarker>
+      <mat-label>Datum</mat-label>
+      <input matInput required name="datum" [(ngModel)]="testung.datum"/>
+    </mat-form-field>
+</form>
+
+<form>
+    <mat-form-field class="input-full-width" appearance="fill" hideRequiredMarker>
+      <mat-label>Uhrzeit</mat-label>
+      <input matInput required name="uhrzeit" [(ngModel)]="testung.uhrzeit"/>
+    </mat-form-field>
+</form>
+
+<button class="btn" mat-raised-button (click)="onClickPrint()">Zertifikat drucken</button>

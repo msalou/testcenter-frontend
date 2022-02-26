@@ -13,9 +13,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { KundenComponent } from './components/kunden/kunden.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalComponent } from './components/modal/modal.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
-  declarations: [AppComponent, FormularComponent, KundenComponent],
+  declarations: [
+    AppComponent,
+    FormularComponent,
+    KundenComponent,
+    ModalComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -27,7 +35,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatButtonModule,
     MatDividerModule,
     MatTableModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDialogModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

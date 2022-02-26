@@ -28,7 +28,7 @@ export class KundeService {
   }
 
   printZertifikat(zertifikat: Zertifikat): Observable<any> {
-    return this.httpClient.post(environment.apiUrl + '/pdf/zertifikat', zertifikat)
+    return this.httpClient.post(environment.apiUrl + '/pdf/zertifikat', zertifikat, { responseType: 'blob' })
       .pipe(catchError(error => this.handleError(error)));
   }
 
