@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { DatenschutzComponent } from './components/datenschutz/datenschutz.component';
 import { FormularComponent } from './components/formular/formular.component';
 import { ImpressumComponent } from './components/impressum/impressum.component';
-import { KundenComponent } from './components/kunden/kunden.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: '', component: FormularComponent },
-  { path: 'data', component: KundenComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'datenschutz', component: DatenschutzComponent },
   { path: 'impressum', component: ImpressumComponent }
 ];

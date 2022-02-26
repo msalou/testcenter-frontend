@@ -14,10 +14,13 @@ import { KundenComponent } from './components/kunden/kunden.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 import { ModalComponent } from './components/modal/modal.component';
 import { MatSelectModule } from '@angular/material/select';
 import { DatenschutzComponent } from './components/datenschutz/datenschutz.component';
 import { ImpressumComponent } from './components/impressum/impressum.component';
+import { LoginComponent } from './components/login/login.component';
+import { FlexModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,7 @@ import { ImpressumComponent } from './components/impressum/impressum.component';
     ModalComponent,
     DatenschutzComponent,
     ImpressumComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import { ImpressumComponent } from './components/impressum/impressum.component';
     MatTableModule,
     MatCheckboxModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule,
+    FlexModule
   ],
   providers: [],
   bootstrap: [AppComponent],
