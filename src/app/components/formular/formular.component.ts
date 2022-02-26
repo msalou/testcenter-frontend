@@ -14,6 +14,8 @@ export class FormularComponent implements OnInit {
   message = {} as Message;
   showError = false;
   checkboxChecked = false;
+  sendbuttontext = 'Abschicken';
+  loadingButton = false;
 
   constructor(private kundeService: KundeService) {}
 
@@ -23,8 +25,13 @@ export class FormularComponent implements OnInit {
   onClick(): void {
     if (this.isFormularFilled(this.kunde)) {
       this.showError = false;
+      this.loadingButton = true;
       this.kundeService.createKunde(this.kunde)
-        .subscribe(message => this.message = message);
+        .subscribe(message => {
+          this.message = message;
+          this.sendbuttontext = 'Nochmal abschicken';
+          this.loadingButton = false;
+        });
     } else {
       this.showError = true;
     }

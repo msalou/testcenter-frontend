@@ -16,6 +16,7 @@ export class ModalComponent implements OnInit {
   selectedKunde = {} as Kunde;
   testung = {} as Testung;
   mailbuttontext = 'Zertifikat als E-Mail verschicken';
+  loadingButton = false;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private kundeService: KundeService) {
     this.selectedKunde = data.kunde;
@@ -45,9 +46,11 @@ export class ModalComponent implements OnInit {
       kunde: this.selectedKunde,
       testung: this.testung
     } as Zertifikat;
-    this.kundeService.sendZertifikat(zertifikat).subscribe(
-      _ => this.mailbuttontext = 'Nochmal versenden'
-    );
+    this.loadingButton = true;
+    this.kundeService.sendZertifikat(zertifikat).subscribe(_ => {
+      this.mailbuttontext = 'Nochmal versenden';    
+      this.loadingButton = false;
+    });
   }
 
 }
