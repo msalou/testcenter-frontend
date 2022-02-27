@@ -13,7 +13,7 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class KundenComponent implements OnInit {
   displayedColumns: string[] = ['select', 'nachname', 'vorname', 'strasse', 'plz', 'ort', 'geburtsdatum', 'email', 'telefon'];
-  selection = new SelectionModel<Kunde>(true, []);
+  selection = new SelectionModel<Kunde>(false, []);
   MAX_NUMBER_SELECTION = 10;
   
   kunden = [] as Kunde[];
@@ -47,13 +47,14 @@ export class KundenComponent implements OnInit {
       for (let selectedKunde of this.selection.selected) {
         this.kundeService.deleteKunde(selectedKunde.id).subscribe(_ => this.getKunden());
       }
+      this.selection = new SelectionModel<Kunde>(false, []);
     }
   }
 
   onClickRefresh(): void {
     this.getKunden();
     this.showMultiselectError = false;
-    this.selection = new SelectionModel<Kunde>(true, []);
+    this.selection = new SelectionModel<Kunde>(false, []);
   }
 
   getKunden(): void {
