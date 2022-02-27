@@ -27,7 +27,7 @@ export class KundenComponent implements OnInit {
   }
 
   onClickPrint(): void {
-    if (this.selection.selected.length > this.MAX_NUMBER_SELECTION) {
+    if (this.selection.selected.length < 1 || this.selection.selected.length > this.MAX_NUMBER_SELECTION) {
       this.showMultiselectError = true;
     } else {
       this.showMultiselectError = false;
@@ -40,7 +40,7 @@ export class KundenComponent implements OnInit {
   }
 
   onClickDelete(): void {
-    if (this.selection.selected.length > this.MAX_NUMBER_SELECTION) {
+    if (this.selection.selected.length < 1 || this.selection.selected.length > this.MAX_NUMBER_SELECTION) {
       this.showMultiselectError = true;
     } else {
       this.showMultiselectError = false;
@@ -52,6 +52,7 @@ export class KundenComponent implements OnInit {
 
   onClickRefresh(): void {
     this.getKunden();
+    this.showMultiselectError = false;
     this.selection = new SelectionModel<Kunde>(true, []);
   }
 
