@@ -13,13 +13,13 @@ import { KundeService } from 'src/app/services/kunde.service';
 })
 export class ModalComponent implements OnInit {
 
-  selectedKunde = {} as Kunde;
+  selectedKunden = [] as Kunde[];
   testung = {} as Testung;
   mailbuttontext = 'Zertifikat als E-Mail verschicken';
   loadingButton = false;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private kundeService: KundeService) {
-    this.selectedKunde = data.kunde;
+    this.selectedKunden = data.kunden;
   }
 
   ngOnInit(): void {
@@ -31,26 +31,30 @@ export class ModalComponent implements OnInit {
   }
   
   onClickPrint(): void {
-    const zertifikat = {
-      kunde: this.selectedKunde,
-      testung: this.testung
-    } as Zertifikat;
-    this.kundeService.printZertifikat(zertifikat).subscribe(res => {
-      const fileURL = URL.createObjectURL(res);
-      window.open(fileURL, '_blank');
-    });
+    for (let selectedKunde of this.selectedKunden) {
+      const zertifikat = {
+        kunde: selectedKunde,
+        testung: this.testung
+      } as Zertifikat;
+      this.kundeService.printZertifikat(zertifikat).subscribe(res => {
+        const fileURL = URL.createObjectURL(res);
+        window.open(fileURL, '_blank');
+      });
+    }
   }
 
   onClickSendMail(): void {
-    const zertifikat = {
-      kunde: this.selectedKunde,
-      testung: this.testung
-    } as Zertifikat;
-    this.loadingButton = true;
-    this.kundeService.sendZertifikat(zertifikat).subscribe(_ => {
-      this.mailbuttontext = 'Nochmal versenden';    
-      this.loadingButton = false;
-    });
+    for (let selectedKunde of this.selectedKunden) {
+      const zertifikat = {
+        kunde: selectedKunde,
+        testung: this.testung
+      } as Zertifikat;
+      this.loadingButton = true;
+      this.kundeService.sendZertifikat(zertifikat).subscribe(_ => {
+        this.mailbuttontext = 'Nochmal versenden';    
+        this.loadingButton = false;
+      });
+    }
   }
 
 }

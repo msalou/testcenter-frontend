@@ -1,7 +1,8 @@
 <div class="buttons">
     <button class="btn" mat-raised-button (click)="onClickRefresh()">Aktualisieren</button>
     <button class="btn" mat-raised-button (click)="onClickPrint()">Zertifikat erstellen</button>
-    <button class="btn" mat-raised-button (click)="onClickDelete()">Kunde löschen</button>
+    <button class="btn" mat-raised-button (click)="onClickDelete()">Kunden löschen</button>
+    <p *ngIf="showMultiselectError" class="error">Bitte maximal {{ MAX_NUMBER_SELECTION }} Kunden auswählen.</p>
 </div>
 
 <table mat-table [dataSource]="kunden" class="mat-elevation-z8">

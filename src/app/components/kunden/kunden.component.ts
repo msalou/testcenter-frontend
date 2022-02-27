@@ -13,11 +13,12 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class KundenComponent implements OnInit {
   displayedColumns: string[] = ['select', 'nachname', 'vorname', 'strasse', 'plz', 'ort', 'geburtsdatum', 'email', 'telefon'];
-  selection = new SelectionModel<Kunde>(false, []);
+  selection = new SelectionModel<Kunde>(true, []);
+  MAX_NUMBER_SELECTION = 10;
   
   kunden = [] as Kunde[];
-  selectedKunde = {} as Kunde;
   testung = {} as Testung;
+  showMultiselectError = false;
 
   constructor(private kundeService: KundeService, private dialog: MatDialog) { }
 
@@ -26,21 +27,32 @@ export class KundenComponent implements OnInit {
   }
 
   onClickPrint(): void {
-    for (let selectedKunde of this.selection.selected) {
-      this.dialog.open(ModalComponent, {
-        data: { kunde: selectedKunde }
-      });
+    if (this.selection.selected.length > this.MAX_NUMBER_SELECTION) {
+      this.showMultiselectError = true;
+    } else {
+      this.showMultiselectError = false;
+      if (this.selection.selected.length >= 1) {
+        this.dialog.open(ModalComponent, {
+          data: { kunden: this.selection.selected }
+        });
+      }
     }
   }
 
   onClickDelete(): void {
-    for (let selectedKunde of this.selection.selected) {
-      this.kundeService.deleteKunde(selectedKunde.id).subscribe(_ => this.getKunden());
+    if (this.selection.selected.length > this.MAX_NUMBER_SELECTION) {
+      this.showMultiselectError = true;
+    } else {
+      this.showMultiselectError = false;
+      for (let selectedKunde of this.selection.selected) {
+        this.kundeService.deleteKunde(selectedKunde.id).subscribe(_ => this.getKunden());
+      }
     }
   }
 
   onClickRefresh(): void {
     this.getKunden();
+    this.selection = new SelectionModel<Kunde>(true, []);
   }
 
   getKunden(): void {

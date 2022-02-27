@@ -2,6 +2,11 @@ table {
     width: 100%;
 }
 
+p.error {
+  color: red;
+  margin-top: 20px;
+}
+
 .mat-column-select {
     overflow: initial;
 }
