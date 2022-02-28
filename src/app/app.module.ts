@@ -21,6 +21,9 @@ import { DatenschutzComponent } from './components/datenschutz/datenschutz.compo
 import { ImpressumComponent } from './components/impressum/impressum.component';
 import { LoginComponent } from './components/login/login.component';
 import { FlexModule } from '@angular/flex-layout';
+import { QRCodeModule } from 'angularx-qrcode';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { ScannerComponent } from './components/scanner/scanner.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { FlexModule } from '@angular/flex-layout';
     DatenschutzComponent,
     ImpressumComponent,
     LoginComponent,
+    ScannerComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,9 @@ import { FlexModule } from '@angular/flex-layout';
     MatDialogModule,
     MatSelectModule,
     MatCardModule,
-    FlexModule
+    FlexModule,
+    QRCodeModule,
+    ZXingScannerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

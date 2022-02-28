@@ -14,8 +14,11 @@ export class FormularComponent implements OnInit {
   message = {} as Message;
   showError = false;
   checkboxChecked = false;
-  sendbuttontext = 'Abschicken';
+  sendbuttontext = 'Abschicken und QR-Code erstellen';
   loadingButton = false;
+
+  showQRCode = false;
+  qrdata = '{ "nachname": "{1}", "vorname": "{2}", "strasse": "{3}", "plz": "{4}", "ort": "{5}", "geburtsdatum": "{6}", "email": "{7}", "telefon": "{8}" }';
 
   constructor(private kundeService: KundeService) {}
 
@@ -31,6 +34,7 @@ export class FormularComponent implements OnInit {
           this.message = message;
           this.sendbuttontext = 'Nochmal abschicken';
           this.loadingButton = false;
+          this.generateQRCode();
         });
     } else {
       this.showError = true;
@@ -42,4 +46,18 @@ export class FormularComponent implements OnInit {
       Object.values(kunde).every(property => (property !== null && property !== '')) &&
       this.checkboxChecked;
   }
+
+  generateQRCode(): void {
+    this.qrdata = this.qrdata
+      .replace('{1}', this.kunde.nachname)
+      .replace('{2}', this.kunde.vorname)
+      .replace('{3}', this.kunde.strasse)
+      .replace('{4}', this.kunde.plz)
+      .replace('{5}', this.kunde.ort)
+      .replace('{6}', this.kunde.geburtsdatum)
+      .replace('{7}', this.kunde.email)
+      .replace('{8}', this.kunde.telefon);
+    this.showQRCode = true;
+  }
 }
+

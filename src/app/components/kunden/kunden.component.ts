@@ -5,6 +5,7 @@ import { Kunde } from 'src/app/models/kunde';
 import { Testung } from 'src/app/models/testung';
 import { KundeService } from 'src/app/services/kunde.service';
 import { ModalComponent } from '../modal/modal.component';
+import { ScannerComponent } from '../scanner/scanner.component';
 
 @Component({
   selector: 'app-kunden',
@@ -72,6 +73,12 @@ export class KundenComponent implements OnInit {
     this.isAllSelected() ?
         this.selection.clear() :
         this.kunden.forEach(row => this.selection.select(row));
+  }
+
+  onClickScanQR(): void {
+    this.showMultiselectError = false;
+    this.selection = new SelectionModel<Kunde>(false, []);
+    this.dialog.open(ScannerComponent);
   }
 }
 
