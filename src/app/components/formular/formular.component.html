@@ -54,7 +54,7 @@
 
 <button class="btn" mat-raised-button [disabled]="loadingButton" (click)="onClick()">{{ sendbuttontext }}</button>
 
-<div *ngIf="showQRCode">
+<div *ngIf="showQRCode && featureToggleQRCode">
   <qrcode [qrdata]="qrdata" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
   <p>Zeigen Sie Ihren persönlichen QR-Code bei der Anmeldung. Diesen QR-Code können Sie bei der nächsten Testung wiederverwenden.</p>
 </div>

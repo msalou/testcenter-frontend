@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Kunde } from 'src/app/models/kunde';
 import { Message } from 'src/app/models/message';
 import { KundeService } from 'src/app/services/kunde.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-formular',
@@ -17,6 +18,7 @@ export class FormularComponent implements OnInit {
   sendbuttontext = 'Abschicken und QR-Code erstellen';
   loadingButton = false;
 
+  featureToggleQRCode = environment.featureToggleQRCode;
   showQRCode = false;
   qrdata = '{ "nachname": "{1}", "vorname": "{2}", "strasse": "{3}", "plz": "{4}", "ort": "{5}", "geburtsdatum": "{6}", "email": "{7}", "telefon": "{8}" }';
 

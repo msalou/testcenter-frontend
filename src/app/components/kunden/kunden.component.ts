@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Kunde } from 'src/app/models/kunde';
 import { Testung } from 'src/app/models/testung';
 import { KundeService } from 'src/app/services/kunde.service';
+import { environment } from 'src/environments/environment';
 import { ModalComponent } from '../modal/modal.component';
 import { ScannerComponent } from '../scanner/scanner.component';
 
@@ -20,6 +21,8 @@ export class KundenComponent implements OnInit {
   kunden = [] as Kunde[];
   testung = {} as Testung;
   showMultiselectError = false;
+
+  featureToggleQRCode = environment.featureToggleQRCode;
 
   constructor(private kundeService: KundeService, private dialog: MatDialog) { }
 

@@ -2,7 +2,7 @@
     <button class="btn" mat-raised-button (click)="onClickRefresh()">Aktualisieren</button>
     <button class="btn" mat-raised-button (click)="onClickPrint()">Zertifikat erstellen</button>
     <button class="btn" mat-raised-button (click)="onClickDelete()">Kunden löschen</button>
-    <button class="btn" mat-raised-button (click)="onClickScanQR()">QR-Code scannen</button>
+    <button *ngIf="featureToggleQRCode" class="btn" mat-raised-button (click)="onClickScanQR()">QR-Code scannen</button>
     <p *ngIf="showMultiselectError" class="error">Bitte mindestens 1 und maximal {{ MAX_NUMBER_SELECTION }} Kunden auswählen.</p>
 </div>
 
