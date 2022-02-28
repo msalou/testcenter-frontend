@@ -15,7 +15,7 @@ export class FormularComponent implements OnInit {
   message = {} as Message;
   showError = false;
   checkboxChecked = false;
-  sendbuttontext = 'Abschicken und QR-Code erstellen';
+  sendbuttontext = 'Abschicken';
   loadingButton = false;
 
   featureToggleQRCode = environment.featureToggleQRCode;
