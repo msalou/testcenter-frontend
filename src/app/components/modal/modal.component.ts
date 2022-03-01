@@ -24,7 +24,7 @@ export class ModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.testung.ergebnis = 'negativ';
-    this.testung.testername = 'CLUNGENE COVID-19';
+    this.testung.testername = 'Green Spring SARS-CoV-Antigen-Schnelltest AT417/20';
     const date = new Date();
     this.testung.datum = formatDate(date, 'dd.MM.yyyy', 'en');
     this.testung.uhrzeit = date.getHours().toString().padStart(2 ,"0") + ':' + date.getMinutes().toString().padStart(2 ,"0");
