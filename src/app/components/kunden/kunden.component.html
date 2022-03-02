@@ -3,7 +3,7 @@
     <button class="btn" mat-raised-button (click)="onClickPrint()">Zertifikat erstellen</button>
     <button class="btn" mat-raised-button (click)="onClickDelete()">Kunden löschen</button>
     <button *ngIf="featureToggleQRCode" class="btn" mat-raised-button (click)="onClickScanQR()">QR-Code scannen</button>
-    <p *ngIf="showMultiselectError" class="error">Bitte mindestens 1 und maximal {{ MAX_NUMBER_SELECTION }} Kunden auswählen.</p>
+    <p *ngIf="showMultiselectError" class="error">Bitte 1 Kunden auswählen.</p>
 </div>
 
 <table mat-table [dataSource]="kunden" class="mat-elevation-z8">

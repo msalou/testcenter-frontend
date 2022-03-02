@@ -16,7 +16,7 @@ import { ScannerComponent } from '../scanner/scanner.component';
 export class KundenComponent implements OnInit {
   displayedColumns: string[] = ['select', 'nachname', 'vorname', 'strasse', 'plz', 'ort', 'geburtsdatum', 'email', 'telefon'];
   selection = new SelectionModel<Kunde>(false, []);
-  MAX_NUMBER_SELECTION = 10;
+  MAX_NUMBER_SELECTION = 1;
   
   kunden = [] as Kunde[];
   testung = {} as Testung;
