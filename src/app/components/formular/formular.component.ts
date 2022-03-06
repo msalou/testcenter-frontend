@@ -20,7 +20,8 @@ export class FormularComponent implements OnInit {
 
   featureToggleQRCode = environment.featureToggleQRCode;
   showQRCode = false;
-  qrdata = '{ "nachname": "{1}", "vorname": "{2}", "strasse": "{3}", "plz": "{4}", "ort": "{5}", "geburtsdatum": "{6}", "email": "{7}", "telefon": "{8}" }';
+  qrdataTemplate = '{ "nachname": "{1}", "vorname": "{2}", "strasse": "{3}", "plz": "{4}", "ort": "{5}", "geburtsdatum": "{6}", "email": "{7}", "telefon": "{8}" }';
+  qrdata = '';
 
   constructor(private kundeService: KundeService) {}
 
@@ -50,7 +51,7 @@ export class FormularComponent implements OnInit {
   }
 
   generateQRCode(): void {
-    this.qrdata = this.qrdata
+    this.qrdata = this.qrdataTemplate
       .replace('{1}', this.kunde.nachname)
       .replace('{2}', this.kunde.vorname)
       .replace('{3}', this.kunde.strasse)
