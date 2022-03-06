@@ -43,13 +43,27 @@
 </form>
 
 <div>
-  <mat-checkbox class="checkbox" required [(ngModel)]="checkboxChecked">
-    Ich bin mit den <a routerLink="/datenschutz" routerLinkActive="active">Datenschutzbedingungen</a> einverstanden.
+  <mat-checkbox class="checkbox" required [(ngModel)]="checkboxDatenschutzChecked">
+    Die zu testenden Personen sind über die Eingabe und Verarbeitung der personenbezogenen Daten sowie die zur
+    Verfügungstellung des Ergebnisses über die angegebene E-Mail-Adresse gem. der 
+    <a routerLink="/datenschutz" routerLinkActive="active">Datenschutzerklärung</a> informiert und hiermit einverstanden.
+  </mat-checkbox>
+  <mat-checkbox class="checkbox" required [(ngModel)]="checkboxEinwilligungChecked">
+    Hiermit willige ich in die Durchführung des Tests für mich bzw. mein Kind und die Verarbeitung der oben genannten
+    personenbezogenen Daten zum Zweck der Feststellung einer etwaigen COVID-19-Infektion und im Weiteren zur Verhinderung
+    der Ausbreitung dieser Krankheit ein.
+  </mat-checkbox>
+  <mat-checkbox class="checkbox" required [(ngModel)]="checkboxSymptomeChecked">
+    Hiermit bestätige ich, dass ich oder die von mir zum Test angemeldeten Personen keine klinischen COVID-19-Symptome haben
+    (Fieber, Husten, Geschmacks- oder Geruchsstörung, Halsschmerzen, Unwohlsein oder ähnliche). Mir ist bekannt, dass im Falle
+    eines positiven Testergebnisses die Teststation verpflichtet ist, das Testergebnis namentlich dem zuständigen Gesundheitsamt
+    zu melden. Ein negatives Testergebnis bedeutet nicht, dass eine COVID-19-Infektion sicher ausgeschlossen werden kann. Das
+    Ergebnis stellt lediglich den Gesundheitsstatus zum Zeitpunkt der Testdurchführung dar.
   </mat-checkbox>
 </div>
 
 <div *ngIf="showError">
-  <p class="error">Bitte füllen Sie alle Felder aus und akzeptieren Sie die Datenschutzbedingungen.</p>
+  <p class="error">Bitte füllen Sie alle Felder aus und akzeptieren Sie die Bestimmungen.</p>
 </div>
 
 <button class="btn" mat-raised-button [disabled]="loadingButton" (click)="onClick()">{{ sendbuttontext }}</button>
@@ -87,6 +101,20 @@
   Mo bis Fr von 8 bis 20 Uhr<br>
   Sa und So von 10 bis 20 Uhr<br>
   <img alt="Healthy Plakat Merzhause" src="../assets/healthy_plakat_merzhausen.jpg"/>
+</div>
+
+<div class="divider">
+  <mat-divider></mat-divider>
+</div>
+
+<div>
+  <b>Adresse</b><br>
+  Alfred-Döblin-Platz 1<br>
+  79100 Freiburg<br>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2670.98880945451!2d7.823145815521869!3d47.97527487921092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47911b4d765dcaab%3A0x985057b9aec13603!2sAlfred-D%C3%B6blin-Platz%201%2C%2079100%20Freiburg%20im%20Breisgau!5e0!3m2!1sde!2sde!4v1646598537286!5m2!1sde!2sde" style="border:0;" allowfullscreen="" loading="lazy"></iframe><br>
+  <b>Öffnungszeiten</b><br>
+  Mo bis Fr von 8 bis 20 Uhr<br>
+  Sa und So von 10 bis 20 Uhr<br>
 </div>
 
 <div class="divider">

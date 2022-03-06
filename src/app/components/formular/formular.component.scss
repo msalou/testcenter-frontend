@@ -33,3 +33,12 @@ p.error {
 img {
   margin-top: 20px;
 }
+
+::ng-deep .mat-checkbox-layout {
+  white-space: normal !important;
+  text-align: left;
+}
+
+::ng-deep .mat-checkbox-inner-container {
+  margin-top: 3px !important;
+}
